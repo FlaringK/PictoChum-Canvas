@@ -5,8 +5,48 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PictoChum Canvas</title>
+
+  <link rel="icon" type="image/x-icon" href="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Symbol.png" />
+  <meta property="og:title" content="PictoChum Canvas" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Icon.png" />
+  <meta property="og:description" content="The Canvas of PictoChum" />
+  <meta name="theme-color" content="#c74061">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  This is just too test
+  <h1 style="margin-top: 0;">PictoChum message canvas</h1>
+
+  <div id="msgWrap">
+    <div id="vertRibbon">
+      <button>▲</button>
+      <button>▼</button>
+      
+      <div class="divider">----</div>
+      
+      <button onclick="Pencil()">✎</button>
+      <button onclick="Eraser()">❒</button>
+      <div class="divider"></div>
+      <button onclick="Thick()">■</button>
+      <button onclick="Thin()">▪</button>
+      
+      <div class="divider">----</div>
+      
+      <button id="clearbox" onclick="init()"><div>Clear Box</div></button>
+  
+    </div>
+    <canvas id="PichmCanvas" width=232 height=83></canvas>
+    <button class="PichmBigBut" id="PichmSendImage" onclick="saveImage()">Save .png</button>
+    <textarea id="PichmText" cols="30" rows="5" oninput="preserverSpace()">                    </textarea>
+    <button class="PichmBigBut" id="PichmDrawText" onclick="drawText()">Draw Text</button>
+  </div>
+  
+  <p>This was very fun to make, hopefully I can make this into an actual messaging app, or at least something close to one. 
+    <br>Pictochat will only let you type on the 5 lines the canvas fills, you can't move the text or just start typing from where ever, you have to treat it like a notepad. While I can't let you type directly on the canvas like Pictochat does, the "Draw Text" box should emulate it close enough. Plus, now you can erase the text on the canvas.
+    <br>This font, <a href="https://www.dafont.com/nds12.font">NDS12</a>, techically contains all of Pictochat's emoticons as ascii characters. I'm not sure there's an easy way to write them, but if you can figure it out then be my guest.</p>
+  
+  <img src="https://www.dafont.com/img/illustration/n/d/nds12.png" alt="">  
+  <script src="draw.js"></script>
 </body>
 </html>
