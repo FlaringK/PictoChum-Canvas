@@ -8,17 +8,32 @@ var Nds = new FontFace('Nds', 'url(https://pipe.miroware.io/5f586dbe02740c4a7fb6
 
 let colora = "#FFF700"
 let colorb = "#FFB500"
-let name = "PictoChum"
+let Mname = "PictoChum"
+let colorU = "#000000"
 
 let ratiox = 232;
 let ratioy = 83;
 let scale = 2
 
+let getCols = () => {
+	colora = document.getElementById("main").value
+	colorb = document.getElementById("outline").value
+	Mname = document.getElementById("name").value
+	colorU = document.getElementById("userText").value
+
+	document.body.style.setProperty('--colora', colora)
+	document.body.style.setProperty('--ribbonColorb', colora)
+	document.body.style.setProperty('--colorb', colorb)
+	document.body.style.setProperty('--col2', colorb)
+}
+
 let init = () => {
+	getCols()
+
 	msgcanvas.width = ratiox * scale;
 	msgcanvas.height = ratioy * scale;
 	
-	msgctx.fillStyle = '#FFF700';
+	msgctx.fillStyle = colora;
 	msgctx.fillRect(0, 0, msgcanvas.width, msgcanvas.height);
 	msgctx.fillStyle = 'white';
 	msgctx.fillRect(2, 2, msgcanvas.width - 4, msgcanvas.height - 4);
@@ -34,10 +49,11 @@ let drawHeader = (ctx) => {
 	ctx.fillRect(0, 0, 56 * scale, 16 * scale);
 	ctx.fillRect(0, 0, 57 * scale, 15 * scale);
 	
-	ctx.fillStyle = "black"
+	ctx.fillStyle = colorU
 	ctx.font = "20px Nds"
 	ctx.textBaseline = "bottom";
-	ctx.fillText(name, 3 * scale, 14 * scale)
+	ctx.fillText(Mname, 3 * scale, 14 * scale)
+	ctx.fillStyle = "black"
 }
 
 Nds.load().then(function(font){

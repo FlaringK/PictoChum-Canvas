@@ -33,7 +33,7 @@ body {
   to { background-position: -80px 40px; }
 }
 
-p, h1, img {
+p, h1, img, .info {
 text-align: center;
 width: calc(256px * var(--scale));
 white-space: pre-line;
@@ -80,7 +80,7 @@ height: calc(83px * var(--scale));
 
 border: solid var(--colora) calc(2px);
 border-radius: calc(8px);
-background: #FFF700;
+background: var(--colora);
 
 image-rendering: pixelated;
 

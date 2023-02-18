@@ -41,6 +41,13 @@
     <textarea id="PichmText" cols="30" rows="5" oninput="preserverSpace()">                    </textarea>
     <button class="PichmBigBut" id="PichmDrawText" onclick="drawText()">Draw Text</button>
   </div>
+
+  <div class="info">
+    <div class="opt"><label for="name">Name</label> <input type="text" name="name" id="name" value="PictoChum"></div>
+    <div class="opt"><label for="main">Main Colour</label> <input type="color" name="main" id="main" value="#FFF700"></div>
+    <div class="opt"><label for="outline">Outline Colour</label> <input type="color" name="outline" id="outline" value="#FFB500"></div>
+    <div class="opt"><label for="userText">Username Text Colour</label> <input type="color" name="userText" id="userText" value="#000000"></div>
+  </div>
   
   <p>This was very fun to make, hopefully I can make this into an actual messaging app, or at least something close to one. 
     <br>Pictochat will only let you type on the 5 lines the canvas fills, you can't move the text or just start typing from where ever, you have to treat it like a notepad. While I can't let you type directly on the canvas like Pictochat does, the "Draw Text" box should emulate it close enough. Plus, now you can erase the text on the canvas.
